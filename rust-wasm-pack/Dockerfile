@@ -25,4 +25,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # install wasm-pack
-RUN cargo install --git https://github.com/rustwasm/wasm-pack.git
+RUN git clone https://github.com/rustwasm/wasm-pack.git \
+    && cd wasm-pack \
+    && cargo install --path . \
+    && cd .. \
+    && rm -rf ./wasm-pack
