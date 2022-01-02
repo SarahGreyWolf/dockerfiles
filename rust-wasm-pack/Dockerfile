@@ -24,9 +24,8 @@ RUN apt-get update \
     && rustc --version \
     && rm -rf /var/lib/apt/lists/*
 
+# install wasm-bindgen
+RUN cargo install -f wasm-bindgen-cli
+
 # install wasm-pack
-RUN git clone https://github.com/rustwasm/wasm-pack.git \
-    && cd wasm-pack \
-    && cargo install --path . \
-    && cd .. \
-    && rm -rf ./wasm-pack
+RUN cargo install -f wasm-pack
