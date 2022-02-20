@@ -29,3 +29,5 @@ RUN cargo install -f wasm-bindgen-cli
 
 # install wasm-pack
 RUN cargo install -f wasm-pack
+
+RUN rm -rf /usr/local/cargo/registry/*
